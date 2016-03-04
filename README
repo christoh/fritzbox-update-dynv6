@@ -1,0 +1,2 @@
+This is an update script to update IP addresses at dynv6.com from a
+Fritz!Box with shell access (telnet or ssh). Freetz is not required
