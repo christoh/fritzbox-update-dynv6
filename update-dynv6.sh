@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 # Fritz!Box script to update IP addresses at dynv6.net
 # Author: Christoph Hochstaetter
