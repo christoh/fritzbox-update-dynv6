@@ -59,11 +59,11 @@ do
   ipv6=$(echo $(ifconfig lan | grep "inet6 addr" | grep "Scope:Global" | grep -v "fd00::") | grep -v "fe80::" |  cut -f 3 -d " " | sed -e "s=/64=$netmask=")
 
   if [ "$ipv6" != "$oldipv6" ]; then
-    echo $(date +"%Y-%d-%y %T"): $hostname = $ipv6
-    echo $(date +"%Y-%d-%y %T"): wget -q -O - "http://dynv6.com/api/update?hostname=$hostname&ipv4=auto&ipv6=$ipv6&token=$token"
+    echo $(date +"%Y-%m-%d %T"): $hostname = $ipv6
+    echo $(date +"%Y-%m-%d %T"): wget -q -O - "http://dynv6.com/api/update?hostname=$hostname&ipv4=auto&ipv6=$ipv6&token=$token"
     
     if [ "$1" == "-p" ]; then
-      echo $(date +"%Y-%d-%y %T"): $(wget -q -O - "http://dynv6.com/api/update?hostname=$hostname&ipv4=auto&ipv6=$ipv6&token=$token")
+      echo $(date +"%Y-%m-%d %T"): $(wget -q -O - "http://dynv6.com/api/update?hostname=$hostname&ipv4=auto&ipv6=$ipv6&token=$token")
     fi
     
     oldipv6=$ipv6
